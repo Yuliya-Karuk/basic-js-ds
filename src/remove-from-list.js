@@ -22,26 +22,6 @@ const { NotImplementedError } = require('../extensions/index.js');
  *   }
  * }
  */
-function convertArrayToList(arr) {
-  return arr.reverse().reduce((acc, cur) => {
-    if (acc) {
-      const node = new ListNode(cur);
-      node.next = acc;
-      return node;
-    }
-
-    return new ListNode(cur);
-  }, null);
-}
-
-class ListNode {
-  constructor(x) {
-    this.value = x;
-    this.next = null;
-  }
-}
-
-const initial = convertArrayToList([3, 1, 2, 3, 4, 5])
 
 function removeKFromList(l, k) {
   if (l) {
@@ -56,8 +36,6 @@ function removeKFromList(l, k) {
     return null;
   }
 }
-
-removeKFromList(initial, 3);
 
 module.exports = {
   removeKFromList
